@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentsRecyclerView.CommentsActivity"
+    android:orientation="vertical"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentRecyclerView"
+        android:layout_width="match_parent"
+
+        android:layout_height="650dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="4dp"
+        android:scrollbars="vertical">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+<RelativeLayout
+    android:layout_gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginHorizontal="5dp"
+    >
+
+    <ImageView
+        android:id="@+id/send"
+        android:onClick="SendButtonClicked"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/commentTime"
+        android:src="@drawable/ic_send"
+        />
+
+    <EditText
+        android:id="@+id/whatUserTyped"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="60dp"
+        android:layout_toRightOf="@+id/commentProfilePic"
+        android:ems="10"
+        android:hint="댓글 달기"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/commentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/whatUserTyped"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@id/whatUserTyped"
+        android:gravity="center"
+        android:text="0:00"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.929" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/commentProfilePic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:scaleType="centerCrop" />
+
+
+
+</RelativeLayout>
+
+
+</LinearLayout>

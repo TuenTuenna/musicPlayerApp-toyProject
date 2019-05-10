@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="4dp"
+
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:layout_marginTop="28dp">
+
+        <ImageView
+            android:id="@+id/AlbumJacket"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:padding="2dp" />
+
+        <TextView
+            android:id="@+id/MusicTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/AlbumJacket"
+            android:text="음악타이틀"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ToggleButton
+            android:visibility="gone"
+            android:id="@+id/btn_like"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/SingerName"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-19dp"
+            android:layout_marginEnd="78dp"
+            android:layout_marginRight="78dp"
+            android:background="@drawable/my_btn_toggle"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/like_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_like"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="95dp"
+            android:layout_marginRight="95dp"
+            android:text="좋아요: " />
+
+        <TextView
+            android:id="@+id/SingerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MusicTitle"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/AlbumJacket"
+            android:text="가수"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/IsPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SingerName"
+            android:layout_alignStart="@+id/MusicTitle"
+            android:layout_marginStart="142dp"
+            android:layout_marginLeft="127dp"
+            android:layout_marginTop="-3dp"
+            android:layout_toRightOf="@+id/listening_count"
+            android:text=""
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/listening_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/MusicTitle"
+            android:layout_marginLeft="14dp"
+            android:layout_marginBottom="-46dp"
+            android:layout_toRightOf="@id/AlbumJacket"
+            android:text="0" />
+
+
+        <LinearLayout
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/music_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/image_more"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/singerName"
+                android:text="3:17" />
+
+            <ImageView
+                android:id="@+id/image_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+
+
+                android:src="@drawable/ic_more" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

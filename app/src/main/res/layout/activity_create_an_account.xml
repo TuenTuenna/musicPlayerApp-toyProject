@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp"
+    tools:context=".LoginRelated.CreateAnAccountActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#84acd1"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:textColor="#FFFFFF"
+        android:text="저장할 자료"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile_pic"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            android:background="#fff"
+            />
+
+        <Button
+            android:id="@+id/btn_profile_pic_setting"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/user_profile_pic"
+            android:layout_toRightOf="@id/user_profile_pic"
+            android:background="@drawable/ic_photo_option"
+            android:gravity="bottom" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/save_json_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"/>
+
+    <EditText
+        android:id="@+id/save_json_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PASSWORD"
+        android:inputType="textPassword"
+        />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:text="자료 저장"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#84acd1"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:textColor="#FFFFFF"
+        android:text="불러온 자료"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/user_profile_pic_check"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/load_json_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="ID"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/load_json_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="PASSWORD"
+        android:padding="5dp"/>
+
+    <Button
+        android:id="@+id/btn_load"
+        android:text="자료 불러오기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+

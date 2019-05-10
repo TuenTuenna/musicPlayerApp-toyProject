@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#35181512"
+    android:padding="@dimen/widget_margin">
+
+    <ImageView
+        android:id="@+id/appwidget_album_art"
+        android:layout_width="120dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+
+        android:layout_centerVertical="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:background="#fff"
+        />
+
+    <TextView
+        android:id="@+id/appwidget_music_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/appwidget_album_art"
+
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/appwidget_album_art"
+
+        android:layout_toRightOf="@+id/appwidget_album_art"
+        android:contentDescription="@string/appwidget_text"
+        android:text="@string/appwidget_text"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/appwidget_singerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appwidget_music_title"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@+id/appwidget_album_art"
+        android:layout_toRightOf="@+id/appwidget_album_art"
+        android:text="singerName"
+        android:textColor="#fff" />
+
+    <ImageButton
+
+        android:id="@+id/appwidget_shuffle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/appwidget_album_art"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginBottom="11dp"
+        android:layout_toEndOf="@+id/appwidget_album_art"
+        android:layout_toRightOf="@+id/appwidget_album_art"
+        android:background="#00ffffff"
+         />
+
+    <ImageButton
+        android:id="@+id/appwidget_previous"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/appwidget_album_art"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="11dp"
+        android:layout_toRightOf="@+id/appwidget_shuffle"
+        android:background="@drawable/ic_previous_song"
+        android:backgroundTint="#fff" />
+
+    <ImageButton
+        android:id="@+id/appwidget_play"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/appwidget_album_art"
+        android:layout_marginLeft="19dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toRightOf="@+id/appwidget_previous"
+        android:background="#00ffffff" />
+
+    <!--<com.airbnb.lottie.LottieAnimationView-->
+        <!--android:id="@+id/appwidget_isPlaying"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_alignStart="@+id/appwidget_next"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginEnd="48dp"-->
+        <!--android:layout_marginRight="48dp"-->
+        <!--app:lottie_autoPlay="true"-->
+        <!--app:lottie_fileName="music.json"-->
+        <!--android:backgroundTint="#fff"-->
+        <!--app:lottie_loop="true"-->
+        <!--/>-->
+
+    <ImageButton
+        android:id="@+id/appwidget_next"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/appwidget_album_art"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="11dp"
+        android:layout_toRightOf="@id/appwidget_play"
+        android:background="@drawable/ic_next_song"
+        android:backgroundTint="#fff"
+        />
+
+    <ImageButton
+        android:id="@+id/appwidget_isLoop"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/appwidget_album_art"
+        android:layout_marginLeft="14dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/appwidget_next"
+        android:background="#00ffffff"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignTop="@+id/appwidget_music_title"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:background="@drawable/ic_soundcloud_logo"
+         />
+
+
+
+</RelativeLayout>

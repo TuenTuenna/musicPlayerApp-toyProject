@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Etc.ImplicitIntentActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+
+    >
+
+
+    <EditText
+        android:id="@+id/website_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="http://developer.android.com"
+        android:text="@string/edittext_uri"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/open_website_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/button_uri"
+        android:onClick="openWebsite"
+        />
+
+    <EditText
+        android:id="@+id/location_edittext"
+        android:text="@string/edittext_loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Golden Gate Bridge"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/open_location_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_loc"
+        android:onClick="openLocation"
+        />
+
+    <EditText
+        android:id="@+id/share_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="be brave and humble"
+        android:inputType="textPersonName"
+        android:text="@string/edittext_share"
+        />
+
+    <Button
+        android:id="@+id/share_text_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/button_share"
+        android:onClick="shareText"
+        />
+
+    <Button
+        android:onClick="takePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take a picture"
+
+        />
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center_horizontal"
+
+        />
+
+
+</LinearLayout>

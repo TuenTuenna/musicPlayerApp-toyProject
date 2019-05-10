@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="1dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:id="@+id/commentCardView"
+    android:layout_gravity="right"
+    >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_pressed"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:visibility="gone"
+                android:id="@+id/user_profile_pic"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/comment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/user_profile_pic"
+                android:text="Hello!!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/comment_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/comment_text"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/user_profile_pic"
+                android:text="Sarah" />
+
+            <TextView
+                android:id="@+id/comment_current_playtime_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/comment_text"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/comment_user_id"
+                android:text="12:00" />
+
+            <TextView
+                android:id="@+id/comment_current_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/comment_text"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@id/comment_current_playtime_text"
+                android:text="방금 전" />
+
+
+        </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

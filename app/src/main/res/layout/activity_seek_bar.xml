@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeekBarActivity">
+
+    <ImageView
+        android:id="@+id/img_music_art"
+        android:layout_width="wrap_content"
+        android:layout_height="417dp"
+        android:background="@drawable/tomboy_album_img" />
+
+
+    <Button
+
+        android:id="@+id/btnBack"
+        android:layout_width="74dp"
+        android:layout_height="48dp"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="4dp"
+        android:text="5초 뒤로"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlay"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_previous"
+        app:layout_constraintTop_toBottomOf="@+id/music_seekbar" />
+
+    <Button
+
+        android:id="@+id/btn_previous"
+        android:layout_width="78dp"
+        android:layout_height="49dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:text="이전 곡"
+        app:layout_constraintEnd_toStartOf="@+id/btnBack"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/music_seekbar" />
+
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="57dp"
+        android:layout_height="47dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="4dp"
+        android:text="재생"
+        app:layout_constraintEnd_toStartOf="@+id/btnFor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toBottomOf="@+id/music_seekbar" />
+
+    <Button
+        android:id="@+id/btnFor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="5초 앞으로"
+        app:layout_constraintEnd_toStartOf="@+id/btn_next"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnPlay"
+        app:layout_constraintTop_toBottomOf="@+id/music_seekbar" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:text="다음곡"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnFor"
+        app:layout_constraintTop_toBottomOf="@+id/music_seekbar" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/seekbar_isPlayingAnim"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:padding="5dp"
+            app:lottie_colorFilter="@color/colorAccent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="sound_visualizer.json"
+            />
+
+        <TextView
+            android:id="@+id/txt_loop_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#af292929"
+            android:text="구간반복 시작지점 : "
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/txt_loop_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#af292929"
+            android:text="구간반복 끝지점 : "
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/currentPlayTime"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="#af292929"
+
+            android:text="현재재생시간 : "
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="167dp" />
+
+        <TextView
+            android:id="@+id/totalPlayTime"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="#af292929"
+            android:text="총 재생시간 : 0분 0초"
+
+
+            android:textColor="#fff"
+            tools:layout_editor_absoluteX="251dp"
+            tools:layout_editor_absoluteY="167dp" />
+    </LinearLayout>
+
+
+    <SeekBar
+        android:id="@+id/music_seekbar"
+        android:layout_width="382dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="음량조절"
+        app:layout_constraintBottom_toTopOf="@+id/music_seekbar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekbar_change_volume"
+        android:layout_width="341dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#d3e7ff"
+        app:layout_constraintBottom_toTopOf="@+id/music_seekbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_is_one_loop"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="makeOneSongLooping"
+        android:text="한곡 반복재생"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/switch_is_playlist_shuffled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_is_volume_silent"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:onClick="setVolumeSilent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="음소거"
+        app:layout_constraintBottom_toTopOf="@+id/btn_loop_end_point"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/switch_is_playlist_shuffled"
+        app:layout_constraintTop_toBottomOf="@+id/btn_next" />
+
+
+
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:visibility="gone"
+        android:id="@+id/switch_is_whole_loop"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="makePlaylistLooping"
+        android:text="전체 반복재생"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/switch_is_playlist_shuffled"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/switch_is_one_loop"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_is_playlist_shuffled"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="makePlaylistShuffled"
+        android:text="무작위재생"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/btn_heart"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
+        android:background="#cdcfce"
+        android:onClick="heartCheck"
+        android:text="하트 102개"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_comment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swtich_choice_loop"
+        android:layout_width="111dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="setChoiceLoop"
+        android:text="구간반복"
+        app:layout_constraintBottom_toTopOf="@+id/btn_heart"
+        app:layout_constraintEnd_toStartOf="@+id/btn_loop_start_point"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_is_one_loop"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <Button
+        android:id="@+id/btn_loop_start_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="구간반복\n시작지점설정"
+        app:layout_constraintBottom_toTopOf="@+id/btn_comment"
+        app:layout_constraintEnd_toStartOf="@+id/btn_loop_end_point"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/swtich_choice_loop"
+        app:layout_constraintTop_toBottomOf="@+id/switch_is_whole_loop"
+        app:layout_constraintVertical_bias="0.894" />
+
+    <Button
+        android:id="@+id/btn_loop_end_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="구간반복\n끝지점설정"
+        app:layout_constraintBottom_toTopOf="@+id/btn_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_loop_start_point"
+        app:layout_constraintTop_toBottomOf="@+id/switch_is_playlist_shuffled" />
+
+
+    <Button
+        android:id="@+id/btn_comment"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:background="#cdcfce"
+        android:onClick="commentButtonClick"
+        android:text="댓글"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_share"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_heart" />
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:background="#cdcfce"
+        android:onClick="share"
+        android:text="공유"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_more"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_comment" />
+
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:background="#cdcfce"
+        android:onClick="goToHome"
+        android:text="메뉴"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_more"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btn_share" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_playlist"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:background="#cdcfce"
+        android:onClick="goToPlaylist"
+        android:text="재생목록"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_share" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_music_video"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="340dp"
+        android:background="#cdcfce"
+        android:text="뮤직비디오 보기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintStart_toEndOf="@+id/btn_share"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_get_data_from_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="서비스에서 데이터 가져오기"
+        app:layout_constraintBottom_toTopOf="@+id/btn_music_video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_start_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="서비스 시작"
+        app:layout_constraintBottom_toTopOf="@+id/btn_get_data_from_service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <TextView
+        android:id="@+id/singerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="#fff"
+        android:text="혁오밴드"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/musicTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/musicTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="280dp"
+        android:background="#fff"
+        android:text="Tomboy - 23"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

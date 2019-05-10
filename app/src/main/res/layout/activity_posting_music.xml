@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    android:orientation="vertical"
+    tools:context=".PostingMusicActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#ea6b1c"
+            android:padding="5dp"
+            android:text="포스팅할 음악"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/music_button_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignEnd="@+id/music_cover_pic"
+                android:layout_alignRight="@+id/music_cover_pic"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginLeft="51dp"
+                android:layout_marginEnd="39dp"
+                android:layout_marginRight="39dp"
+                android:background="@drawable/ic_music_play" />
+
+            <ImageView
+                android:id="@+id/music_cover_pic"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+
+                android:layout_marginHorizontal="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+
+            <Button
+                android:id="@+id/btn_music_cover_pic_setting"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/music_cover_pic"
+                android:layout_toRightOf="@id/music_cover_pic"
+                android:background="@drawable/ic_photo_option"
+                android:gravity="bottom" />
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_toRightOf="@+id/btn_music_cover_pic_setting">
+
+                <VideoView
+                    android:id="@+id/post_music_video_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="top"
+
+                    android:src="@drawable/ic_launcher_background" />
+
+                <ImageView
+                    android:id="@+id/video_controller"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:scaleType="fitXY" />
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_music_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="음악 타이틀" />
+
+            <EditText
+                android:id="@+id/edit_music_singer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/edit_music_title"
+                android:hint="가수" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/user_selected_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="12dp"
+                android:text="음악장르"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/btn_music_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:layout_marginTop="0dp"
+                android:layout_toRightOf="@+id/user_selected_genre"
+                android:text="음악 장르 " />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/user_selected_music_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="12dp"
+                android:text="음악파일"
+                android:textSize="25sp" />
+
+
+            <Button
+                android:id="@+id/btn_mp3_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:layout_toRightOf="@+id/user_selected_music_file"
+                android:text="파일 선택" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/user_selected_music_video_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="12dp"
+                android:text="뮤직비디오파일"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/btn_music_video_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:layout_toRightOf="@+id/user_selected_music_video_file"
+                android:text="파일 선택" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_post_music"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="음악 등록" />
+        <Button
+            android:id="@+id/btn_post_wholemusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="내 핸드폰 모든음악 등록하기" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#84acd1"
+            android:padding="5dp"
+            android:text="불러온 자료"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+
+            <ImageView
+                android:id="@+id/post_music_pic_check"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+
+            <VideoView
+                android:id="@+id/post_music_video_pic_check"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@+id/post_music_pic_check"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/check_posting_music_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="올린이"
+            android:padding="5dp" />
+        <TextView
+            android:id="@+id/check_posting_music_singer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="가수"
+            android:padding="5dp" />
+        <TextView
+            android:id="@+id/check_posting_music_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="음악 타이틀"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/check_posting_music_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="음악 장르"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/check_posting_music_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="재생시간"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/check_posting_music_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="뮤직 비디오"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/btn_post_music_load"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="자료 불러오기" />
+    </LinearLayout>
+</ScrollView>
